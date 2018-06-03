@@ -13,6 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
+    print('request received')
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
