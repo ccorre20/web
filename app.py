@@ -1,7 +1,6 @@
 from flask import Flask, request, redirect, flash, url_for
 from werkzeug.utils import secure_filename
 import os
-import io
 from processing import classify
 
 
