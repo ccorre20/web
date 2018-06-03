@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, flash, url_for
+from flask import Flask, request, redirect, flash
 from werkzeug.utils import secure_filename
 import os
 from processing import classify
