@@ -35,8 +35,8 @@
       <file leaf-file-name="Aptfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Aptfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="45">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -227,8 +227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Aptfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="45">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
