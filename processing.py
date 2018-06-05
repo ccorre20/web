@@ -15,9 +15,9 @@ k = 500
 def classify(filename):
     img = cv2.cvtColor(cv2.imread(os.path.join(img_folder, filename)), cv2.COLOR_BGR2GRAY)
 
-    h, w, c = img.shape
+    shape = img.shape
 
-    if w > 2000:
+    if shape[0] > 2000:
         img = cv2.resize(img, (1280, 720))
 
     sift = cv2.xfeatures2d.SIFT_create()
