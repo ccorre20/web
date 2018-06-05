@@ -33,7 +33,7 @@ def classify(filename):
 
     clf = joblib.load('new_LinearSVC.pkl')
 
-    ans = locations[clf.predict([hist])]
+    ans = locations[int(clf.predict([hist])[0])]
 
     with contextlib.suppress(FileNotFoundError):
         os.remove(os.path.join(img_folder, filename))
