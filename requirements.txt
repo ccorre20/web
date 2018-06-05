@@ -11,3 +11,4 @@ opencv-contrib-python
 Werkzeug==0.14.1
 sklearn
 scipy
+pandas
