@@ -1,16 +1,29 @@
+# Developed by Camilo Correa Restrepo
+# ccorre20@eafit.edu.co
+# Version 2
+
+# app.py
+# This contains the main code for the web application, in particular,
+# it allows the app to receive requests and respond to them.
 from flask import Flask, request, redirect, flash
 from werkzeug.utils import secure_filename
 import os
 from processing import classify
 
-
+# This defines where images will be temporarily stored.
+# While it is true that when run on a container this is done anyways when it is spun down,
+# it is still a good idea to not clutter it with images.
 UPLOAD_FOLDER = '/tmp'
 
+# This initiates and configures the app.
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/', methods=['GET', 'POST'])
+# This is main method that controls the execution of the web app.
+# It receives a file and hands it off to be processed.
+# Otherwise it flashes an error.
 def hello_world():
     print('request received')
     if request.method == 'POST':
@@ -24,6 +37,8 @@ def hello_world():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
+        # If the file is ok, save it to disk, and send it to the classification method.
+        # It returns an html doc that is then rendered with the answer.
         if file:
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))

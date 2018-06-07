@@ -1,3 +1,11 @@
+# Developed by Camilo Correa Restrepo
+# ccorre20@eafit.edu.co
+# Version 2
+
+# processing.py
+# This contains the auxiliary code for the web application, in particular,
+# it allows the app to classify images, and render their results as an html doc string.
+
 import cv2 as cv2
 import joblib
 import os
@@ -13,6 +21,7 @@ locations = {0: '18', 1: '19', 2: '26', 3: '38', 4: 'admisiones', 5: 'agora', 6:
 k = 500
 
 
+# This helper method transforms a string into an html doc string with the answer inserted.
 def response(ans):
     string = '''
         <!doctype html>
@@ -28,6 +37,8 @@ def response(ans):
     return string
 
 
+# This is the most important method, it quickly loads both models, and calculates to what location each
+# image corresponds.
 def classify(filename):
     img = cv2.cvtColor(cv2.imread(os.path.join(img_folder, filename)), cv2.COLOR_BGR2GRAY)
 
