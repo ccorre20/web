@@ -30,12 +30,18 @@ def hello_world():
             return classify(filename)
     return '''
         <!doctype html>
-        <title>Upload new File</title>
-        <h1>Upload new File</h1>
-        <form method=post enctype=multipart/form-data>
-          <p><input type=file name=file>
-             <input type=submit value=Upload>
-        </form>
+        <head>
+            <title>Location Recognition System</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body>
+            <h1>Please upload a new File</h1>
+            <p>Select an image and later click "upload" to launch classify it</p>
+            <form method=post enctype=multipart/form-data>
+              <p><input type=file name=file>
+                 <input type=submit value=Upload>
+            </form>
+        </body>
         '''
 
 if __name__ == '__main__':
