@@ -43,6 +43,7 @@ def hello_world():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return classify(filename)
+    # If the request method was get, it will simply return a simple web page as a string.
     return '''
         <!doctype html>
         <head>
