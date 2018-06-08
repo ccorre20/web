@@ -5,6 +5,7 @@
 # app.py
 # This contains the main code for the web application, in particular,
 # it allows the app to receive requests and respond to them.
+
 from flask import Flask, request, redirect, flash
 from werkzeug.utils import secure_filename
 import os

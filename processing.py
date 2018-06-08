@@ -16,7 +16,7 @@ import numpy as np
 img_folder = '/tmp'
 
 locations = {0: '18', 1: '19', 2: '26', 3: '38', 4: 'admisiones', 5: 'agora', 6: 'auditorio',
-             7: 'biblioteca', 8: 'idiomas', 9: 'dogger'}
+             7: 'biblioteca', 8: 'dogger', 9: 'idiomas'}
 
 # Sets the number of clusters used by the model.
 k = 500
@@ -58,14 +58,14 @@ def classify(filename):
     df = pd.DataFrame(des)
 
     # Load the clustering model
-    k_model = joblib.load('new_KMeans.pkl')
+    k_model = joblib.load('new_KMeans_'+str(k)+'.pkl')
 
     # Label all of the image's descriptors and constructs a histogram from the labeled descriptors.
     labels = k_model.predict(df.values)
     hist, _ = np.histogram(labels, k, density=True)
 
     # Load the classification model and classify the image
-    clf = joblib.load('new_LinearSVC.pkl')
+    clf = joblib.load('new_LinearSVC_'+str(k)+'.pkl')
     ans = locations[int(clf.predict([hist])[0])]
 
     # Remove the temporarily stored file
